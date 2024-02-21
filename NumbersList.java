@@ -1,28 +1,19 @@
 import java.util.Scanner;
 
 public class NumbersList {
-
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner num = new Scanner(System.in);
+        System.out.println("Enter Amount to input:");
+        int n = num.nextInt();
+        num.nextLine();
 
-        int limit = 0;
-        while (limit <= 0) {
-            System.out.println("Enter the number of elements you want to input (positive integer):");
-            limit = scanner.nextInt();
+        System.out.println("Enter " + n + " numbers");
+
+        for (int i = 0; i < n; i++) {
+            int number = num.nextInt();
+            System.out.println("Number " + (i + 1) + ": " + number);
         }
 
-        int[] numbers = new int[limit];
-
-        for (int i = 0; i < limit; i++) {
-            System.out.println("Enter number " + (i + 1) + ":");
-            numbers[i] = scanner.nextInt();
-        }
-
-        System.out.println("\nYour entered numbers are:");
-        for (int number : numbers) {
-            System.out.println(number);
-        }
-
-        scanner.close();
+        num.close();
     }
 }
